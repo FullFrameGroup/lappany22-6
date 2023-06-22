@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Tajawal Regular.ttf">
+            <string>Tajawal-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="125" id="KGk-i7-Jjw" customClass="ComplaintsCell" customModule="Labany" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="125"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="125"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NgR-3E-gqW">
+                        <rect key="frame" x="3" y="6" width="314" height="115"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="NV3-ur-RSb">
+                                <rect key="frame" x="8" y="47" width="298" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="qLe-fr-Who"/>
+                                </constraints>
+                                <string key="text">هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
+إذا كنت تحتاج إلى عدد أكبر من الفقرات يتيح لك مولد النص العربى زيادة عدد الفقرات كما تريد واللحوم الطازجة</string>
+                                <fontDescription key="fontDescription" name="Tajawal-Regular" family="Tajawal" pointSize="14"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ISD-fC-1f3">
+                                <rect key="frame" x="0.0" y="0.0" width="314" height="25"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="IeI-QQ-6Pz">
+                                        <rect key="frame" x="5" y="0.0" width="304" height="25"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="منذ ساعتين" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uo4-eq-Koj">
+                                                <rect key="frame" x="0.0" y="0.0" width="147" height="25"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="25" id="In0-bZ-63e"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Tajawal-Regular" family="Tajawal" pointSize="10"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="للذبائح واللحوم الطازجة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8o8-4u-P4N">
+                                                <rect key="frame" x="157" y="0.0" width="147" height="25"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="c4T-zo-Hif"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Tajawal-Regular" family="Tajawal" pointSize="9"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.95610553030000001" green="0.94349330659999997" blue="0.94324618579999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="IeI-QQ-6Pz" secondAttribute="trailing" constant="5" id="H8W-OK-RdP"/>
+                                    <constraint firstAttribute="height" constant="25" id="QUw-P6-iEW"/>
+                                    <constraint firstItem="IeI-QQ-6Pz" firstAttribute="leading" secondItem="ISD-fC-1f3" secondAttribute="leading" constant="5" id="dPX-kT-XhZ"/>
+                                    <constraint firstItem="IeI-QQ-6Pz" firstAttribute="top" secondItem="ISD-fC-1f3" secondAttribute="top" id="qo3-Gs-MRw"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="للذبائح واللحوم الطازجة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zoz-6h-RJY">
+                                <rect key="frame" x="5" y="95" width="304" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="Lqc-BN-wlZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Tajawal-Regular" family="Tajawal" pointSize="9"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="للذبائح واللحوم الطازجة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZc-pr-Nm8">
+                                <rect key="frame" x="10" y="25" width="294" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="19" id="Ydn-0h-20w"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Tajawal-Regular" family="Tajawal" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bbp-tG-kcH">
+                                <rect key="frame" x="0.0" y="93" width="314" height="0.5"/>
+                                <color key="backgroundColor" red="0.6705882353" green="0.6705882353" blue="0.6705882353" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="0.5" id="IpP-wW-qdo"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95173424480000002" green="0.94331425430000004" blue="0.94315391780000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="NV3-ur-RSb" secondAttribute="trailing" constant="8" id="Fky-8O-WeN"/>
+                            <constraint firstItem="bbp-tG-kcH" firstAttribute="leading" secondItem="NgR-3E-gqW" secondAttribute="leading" id="G71-2y-xgu"/>
+                            <constraint firstItem="ISD-fC-1f3" firstAttribute="leading" secondItem="NgR-3E-gqW" secondAttribute="leading" id="IJ9-u1-cMu"/>
+                            <constraint firstItem="TZc-pr-Nm8" firstAttribute="top" secondItem="ISD-fC-1f3" secondAttribute="bottom" id="KCO-KR-DKa"/>
+                            <constraint firstAttribute="trailing" secondItem="ISD-fC-1f3" secondAttribute="trailing" id="MVA-xg-92r"/>
+                            <constraint firstItem="Zoz-6h-RJY" firstAttribute="top" secondItem="bbp-tG-kcH" secondAttribute="bottom" constant="1.5" id="OaY-bD-6VV"/>
+                            <constraint firstItem="NV3-ur-RSb" firstAttribute="top" secondItem="TZc-pr-Nm8" secondAttribute="bottom" constant="3" id="R8X-Dz-3aB"/>
+                            <constraint firstItem="Zoz-6h-RJY" firstAttribute="leading" secondItem="NgR-3E-gqW" secondAttribute="leading" constant="5" id="SCc-8m-s0N"/>
+                            <constraint firstItem="bbp-tG-kcH" firstAttribute="top" secondItem="NV3-ur-RSb" secondAttribute="bottom" constant="2" id="TKM-nX-Fl8"/>
+                            <constraint firstAttribute="height" constant="115" id="bg3-fY-gpL"/>
+                            <constraint firstItem="NV3-ur-RSb" firstAttribute="leading" secondItem="NgR-3E-gqW" secondAttribute="leading" constant="8" id="cqz-vd-Aog"/>
+                            <constraint firstAttribute="trailing" secondItem="Zoz-6h-RJY" secondAttribute="trailing" constant="5" id="muA-aS-cSo"/>
+                            <constraint firstItem="ISD-fC-1f3" firstAttribute="top" secondItem="NgR-3E-gqW" secondAttribute="top" id="oYF-63-UQH"/>
+                            <constraint firstAttribute="trailing" secondItem="bbp-tG-kcH" secondAttribute="trailing" id="q1D-zX-3ZC"/>
+                            <constraint firstItem="TZc-pr-Nm8" firstAttribute="leading" secondItem="NgR-3E-gqW" secondAttribute="leading" constant="10" id="siB-mL-TiQ"/>
+                            <constraint firstAttribute="trailing" secondItem="TZc-pr-Nm8" secondAttribute="trailing" constant="10" id="tvK-Ul-GMO"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                <size key="value" width="0.0" height="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="NgR-3E-gqW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="3" id="Auo-kj-rcd"/>
+                    <constraint firstAttribute="trailing" secondItem="NgR-3E-gqW" secondAttribute="trailing" constant="3" id="WGr-Xj-Hwm"/>
+                    <constraint firstItem="NgR-3E-gqW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="dtb-ve-sQ7"/>
+                    <constraint firstAttribute="bottom" secondItem="NgR-3E-gqW" secondAttribute="bottom" constant="4" id="ybF-RX-ZFb"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="bgView" destination="NgR-3E-gqW" id="Al1-vb-aND"/>
+                <outlet property="dottView" destination="bbp-tG-kcH" id="XgF-5h-CeW"/>
+                <outlet property="lblComplaintNum" destination="8o8-4u-P4N" id="F3a-vR-VCU"/>
+                <outlet property="lblDescrription" destination="NV3-ur-RSb" id="Oyy-tl-6mQ"/>
+                <outlet property="lblMsg" destination="Zoz-6h-RJY" id="wy3-L5-v3j"/>
+                <outlet property="lblTitle" destination="TZc-pr-Nm8" id="enC-zl-eFs"/>
+                <outlet property="lbltime" destination="uo4-eq-Koj" id="Tw3-fi-BvS"/>
+                <outlet property="topView" destination="ISD-fC-1f3" id="QtJ-QN-b3V"/>
+            </connections>
+            <point key="canvasLocation" x="73.913043478260875" y="67.96875"/>
+        </tableViewCell>
+    </objects>
+</document>

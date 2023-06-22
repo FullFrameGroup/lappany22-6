@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="ArbFONTS-Tajawal-Medium.ttf">
+            <string>Tajawal-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="102" id="KGk-i7-Jjw" customClass="WalletCell" customModule="Labany" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="102"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="102"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9lt-MD-sFM">
+                        <rect key="frame" x="0.0" y="5" width="320" height="92"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تمت إضافة 1,000 ريال إلى رصيدك عن طريق بطاقة الائتمان" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hNd-ln-1Ak">
+                                <rect key="frame" x="8" y="14" width="259" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="dkZ-Rc-xCf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Tajawal-Medium" family="Tajawal Medium" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 Apr, 2020" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2en-u2-uU4">
+                                <rect key="frame" x="219" y="70" width="51" height="14"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="14" id="t0I-w4-2cz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Tajawal-Medium" family="Tajawal Medium" pointSize="10"/>
+                                <color key="textColor" systemColor="systemGray2Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dp2-XX-E0p">
+                                <rect key="frame" x="275" y="26" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="KRX-db-g45"/>
+                                    <constraint firstAttribute="height" constant="40" id="XrE-ia-uN4"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="arrow.up" catalog="system"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="dp2-XX-E0p" secondAttribute="trailing" constant="5" id="1xN-4L-a6X"/>
+                            <constraint firstItem="dp2-XX-E0p" firstAttribute="centerY" secondItem="9lt-MD-sFM" secondAttribute="centerY" id="8p3-W5-B5D"/>
+                            <constraint firstItem="dp2-XX-E0p" firstAttribute="leading" secondItem="hNd-ln-1Ak" secondAttribute="trailing" constant="8" id="KVf-eB-dVM"/>
+                            <constraint firstItem="hNd-ln-1Ak" firstAttribute="top" secondItem="9lt-MD-sFM" secondAttribute="top" constant="14" id="Rdn-Gv-Wbg"/>
+                            <constraint firstItem="2en-u2-uU4" firstAttribute="top" secondItem="hNd-ln-1Ak" secondAttribute="bottom" constant="4" id="V5V-Tw-3tn"/>
+                            <constraint firstItem="hNd-ln-1Ak" firstAttribute="leading" secondItem="9lt-MD-sFM" secondAttribute="leading" constant="8" id="jde-PS-2PP"/>
+                            <constraint firstAttribute="trailing" secondItem="2en-u2-uU4" secondAttribute="trailing" constant="50" id="zSH-HE-5vJ"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="9lt-MD-sFM" secondAttribute="trailing" id="SIr-aL-XG5"/>
+                    <constraint firstItem="9lt-MD-sFM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="cwD-SY-8tR"/>
+                    <constraint firstAttribute="bottom" secondItem="9lt-MD-sFM" secondAttribute="bottom" constant="5" id="eXw-UU-lBC"/>
+                    <constraint firstItem="9lt-MD-sFM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="n6Y-tk-wIy"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="img" destination="dp2-XX-E0p" id="PPb-zx-qEB"/>
+                <outlet property="lblDescription" destination="hNd-ln-1Ak" id="tt9-Aj-kfZ"/>
+                <outlet property="lbldate" destination="2en-u2-uU4" id="6Jc-LS-7vj"/>
+            </connections>
+            <point key="canvasLocation" x="69.565217391304358" y="111.16071428571428"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="arrow.up" catalog="system" width="120" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

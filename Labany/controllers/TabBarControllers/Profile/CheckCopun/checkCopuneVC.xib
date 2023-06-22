@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="ArbFONTS-Tajawal-Medium.ttf">
+            <string>Tajawal-Medium</string>
+        </array>
+        <array key="Tajawal Regular.ttf">
+            <string>Tajawal-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="checkCopuneVC" customModule="Labany" customModuleProvider="target">
+            <connections>
+                <outlet property="tfCoupon" destination="Rzv-ai-Aef" id="8FI-fM-KSW"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewHeader" destination="bnB-H4-CRS" id="O9D-bF-Xyg"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bnB-H4-CRS" customClass="HeaderView" customModule="Labany" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="90" id="Ewh-Lk-uxH"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bQe-NJ-FQ2">
+                    <rect key="frame" x="35" y="119" width="344" height="78"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="يرجي إدخال كود القسيمة  والتأكد من  أنها صحيحة" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4O3-P8-Suy">
+                            <rect key="frame" x="22" y="0.0" width="322" height="58"/>
+                            <fontDescription key="fontDescription" name="Tajawal-Medium" family="Tajawal Medium" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="4O3-P8-Suy" firstAttribute="leading" secondItem="bQe-NJ-FQ2" secondAttribute="leading" constant="22" id="43o-hu-ddi"/>
+                        <constraint firstItem="4O3-P8-Suy" firstAttribute="top" secondItem="bQe-NJ-FQ2" secondAttribute="top" id="FwS-fb-DwU"/>
+                        <constraint firstAttribute="trailing" secondItem="4O3-P8-Suy" secondAttribute="trailing" id="MUN-LR-TIF"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="Xyf-Zh-r6D"/>
+                        <constraint firstAttribute="height" constant="78" id="j7e-mj-Vmc"/>
+                        <constraint firstAttribute="bottom" secondItem="4O3-P8-Suy" secondAttribute="bottom" constant="20" id="vbB-Pr-oun"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="1Ja-ou-R3D">
+                    <rect key="frame" x="35" y="219" width="344" height="48"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6T2-Cb-gG8">
+                            <rect key="frame" x="0.0" y="0.0" width="344" height="48"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="كود القسيمة" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rzv-ai-Aef">
+                                    <rect key="frame" x="8" y="8" width="328" height="34"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="34" id="b86-xM-JAI"/>
+                                    </constraints>
+                                    <color key="textColor" name="#light_grey_blue"/>
+                                    <fontDescription key="fontDescription" name="Tajawal-Regular" family="Tajawal" pointSize="17"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" name="#pale_grey"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="Rzv-ai-Aef" secondAttribute="trailing" constant="8" id="7y5-HV-nRe"/>
+                                <constraint firstAttribute="height" constant="48" id="CqP-R4-vQC"/>
+                                <constraint firstItem="Rzv-ai-Aef" firstAttribute="leading" secondItem="6T2-Cb-gG8" secondAttribute="leading" constant="8" id="Vfx-kk-3gm"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="Vpz-ll-LQU"/>
+                                <constraint firstItem="Rzv-ai-Aef" firstAttribute="top" secondItem="6T2-Cb-gG8" secondAttribute="topMargin" id="xo5-H9-pHj"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="8"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="fyT-4I-2BR">
+                    <rect key="frame" x="35" y="287" width="344" height="60"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c7S-8T-iB4">
+                            <rect key="frame" x="0.0" y="0.0" width="344" height="60"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EJX-PD-mxP">
+                                    <rect key="frame" x="0.0" y="7.5" width="344" height="45"/>
+                                    <color key="backgroundColor" name="#dull_red"/>
+                                    <fontDescription key="fontDescription" name="Tajawal-Medium" family="Tajawal Medium" pointSize="21"/>
+                                    <state key="normal" title="صرف">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="8"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="cashingAction:" destination="-1" eventType="touchUpInside" id="Aet-ed-nE7"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="8Ld-Uv-e0P"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="9ti-M7-QgG"/>
+                                <constraint firstAttribute="trailing" secondItem="EJX-PD-mxP" secondAttribute="trailing" id="HSx-Xl-BLQ"/>
+                                <constraint firstItem="EJX-PD-mxP" firstAttribute="top" secondItem="c7S-8T-iB4" secondAttribute="top" constant="7.5" id="brV-IU-Dgo"/>
+                                <constraint firstAttribute="bottom" secondItem="EJX-PD-mxP" secondAttribute="bottom" constant="7.5" id="eb1-0w-unc"/>
+                                <constraint firstItem="EJX-PD-mxP" firstAttribute="leading" secondItem="c7S-8T-iB4" secondAttribute="leading" id="ndV-lF-ITc"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="bQe-NJ-FQ2" firstAttribute="top" secondItem="bnB-H4-CRS" secondAttribute="bottom" constant="29" id="0Cb-L7-biS"/>
+                <constraint firstItem="bQe-NJ-FQ2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="35" id="1hr-Wu-jBW"/>
+                <constraint firstItem="bnB-H4-CRS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="2hD-Un-158"/>
+                <constraint firstItem="bQe-NJ-FQ2" firstAttribute="trailing" secondItem="1Ja-ou-R3D" secondAttribute="trailing" id="71d-vW-9dS"/>
+                <constraint firstItem="1Ja-ou-R3D" firstAttribute="trailing" secondItem="fyT-4I-2BR" secondAttribute="trailing" id="OCX-il-Tt1"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bnB-H4-CRS" secondAttribute="trailing" id="Tb1-hZ-LaH"/>
+                <constraint firstItem="fyT-4I-2BR" firstAttribute="top" secondItem="1Ja-ou-R3D" secondAttribute="bottom" constant="20" id="eEY-DJ-hAY"/>
+                <constraint firstItem="bnB-H4-CRS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="hng-uj-Ja2"/>
+                <constraint firstItem="1Ja-ou-R3D" firstAttribute="top" secondItem="bQe-NJ-FQ2" secondAttribute="bottom" constant="22" id="sY9-6v-7Sq"/>
+                <constraint firstItem="1Ja-ou-R3D" firstAttribute="leading" secondItem="fyT-4I-2BR" secondAttribute="leading" id="vC7-XD-EWT"/>
+                <constraint firstItem="fyT-4I-2BR" firstAttribute="top" secondItem="1Ja-ou-R3D" secondAttribute="bottom" constant="20" id="vOs-9p-fg8"/>
+                <constraint firstItem="bQe-NJ-FQ2" firstAttribute="centerX" secondItem="bnB-H4-CRS" secondAttribute="centerX" id="vb6-F9-QBA"/>
+                <constraint firstItem="bQe-NJ-FQ2" firstAttribute="leading" secondItem="1Ja-ou-R3D" secondAttribute="leading" id="wdo-6h-AUT"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="95.758928571428569"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="#dull_red">
+            <color red="0.67100000381469727" green="0.22400000691413879" blue="0.22400000691413879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="#light_grey_blue">
+            <color red="0.6940000057220459" green="0.6940000057220459" blue="0.73299998044967651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="#pale_grey">
+            <color red="0.94499999284744263" green="0.94499999284744263" blue="0.94900000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

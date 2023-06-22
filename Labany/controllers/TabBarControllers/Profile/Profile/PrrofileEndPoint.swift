@@ -1,0 +1,117 @@
+//
+//  PrrofileEndPoint.swift
+//  Labany
+//
+//  Created by Eman Gaber on 7/15/21.
+//
+
+import Foundation
+import UIKit
+
+class ProfileWebService{
+class func getUserDatasApi(parameters: [String : Any], completionHundler: @escaping (SigneInModel?,String?) -> Void){
+        NetworkRequest.Request( url: APIs.Instance.userDataUrl(), method: .post, parameters: parameters, headers: APIs.Instance.commonHeaders()){
+            response , error in
+            
+            if response == nil && error == nil{
+                completionHundler(nil,nil)
+            }else{
+                if error == nil{
+                    do {
+                        let parsedResult = try JSONDecoder().decode(SigneInModel?.self,from:(response?.data)!)
+                        
+                        if parsedResult?.success == false
+                        {
+                            completionHundler(parsedResult,parsedResult?.msg)
+                            
+                        }else
+                        {
+                            completionHundler(parsedResult,nil)
+                        }
+                    }catch{
+                        print("errorrrr catcchhchchchc")
+                        print (error)
+                        completionHundler(nil, error.localizedDescription)
+                        
+                    }
+                }else{
+                    print("error area busy in method")
+                    completionHundler(nil, error)
+                }
+            }
+        }
+    }
+    
+    
+  
+    
+    
+    class func logoutApi(parameters: [String : Any], completionHundler: @escaping (RegistrationResponse?,String?) -> Void){
+        NetworkRequest.Request( url: APIs.Instance.logoutUrl(), method: .post, parameters: parameters, headers: APIs.Instance.commonHeaders()){
+            response , error in
+            
+            if response == nil && error == nil{
+                completionHundler(nil,nil)
+            }else{
+                if error == nil{
+                    do {
+                        let parsedResult = try JSONDecoder().decode(RegistrationResponse?.self,from:(response?.data)!)
+                        
+                        if parsedResult?.success == false
+                        {
+                            completionHundler(parsedResult,parsedResult?.msg)
+                            
+                        }else
+                        {
+                            completionHundler(parsedResult,nil)
+                        }
+                    }catch{
+                        print("errorrrr catcchhchchchc")
+                        print (error)
+                        completionHundler(nil, error.localizedDescription)
+                        
+                    }
+                }else{
+                    print("error area busy in method")
+                    completionHundler(nil, error)
+                }
+            }
+        }
+    }
+    
+    
+        class func deleteAccountApi (user_id:Int,completionHundler: @escaping (WalletResponse?,String?) -> Void){
+            let url = "\(APIs.Instance.deletAccountUrl())?user_id=\(user_id)"
+            NetworkRequest.Request(url: url, method: .post, parameters: nil, headers: APIs.Instance.commonHeaders()){
+                response , error in
+                
+                if response == nil && error == nil{
+                    completionHundler(nil,nil)
+                }else{
+                    if error == nil{
+                        do {
+                let parsedResult = try JSONDecoder().decode(WalletResponse?.self,from:(response?.data)!)
+                            
+                if parsedResult?.success == false
+                    {
+                        completionHundler(parsedResult,parsedResult?.msg)
+                                
+                            }else
+                            {
+            
+                                completionHundler(parsedResult,nil)
+                            }
+                        }catch{
+                            print("HomeResponse errorrrr catcchhchchchc")
+                            print (error)
+                            completionHundler(nil, error.localizedDescription)
+                            
+                        }
+                    }else{
+                        print("error area busy in method")
+                        completionHundler(nil, error)
+                    }
+                }
+            }
+        }
+}

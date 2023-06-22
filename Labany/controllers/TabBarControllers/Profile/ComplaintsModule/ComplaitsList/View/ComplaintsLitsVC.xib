@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="ArbFONTS-Tajawal-Bold.ttf">
+            <string>Tajawal-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ComplaintsLitsVC" customModule="Labany" customModuleProvider="target">
+            <connections>
+                <outlet property="complaintsTable" destination="X5y-kI-533" id="N9G-F4-M7w"/>
+                <outlet property="headerView" destination="15u-q2-Wx2" id="yl1-Ya-8no"/>
+                <outlet property="lblnoComplaints" destination="b9M-Rt-vZY" id="pKf-SZ-y26"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="X5y-kI-533">
+                    <rect key="frame" x="20" y="90" width="374" height="772"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="15u-q2-Wx2" customClass="HeaderView" customModule="Labany" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="90" id="AXI-Hg-gtD"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="لا توجد  شكاوي" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9M-Rt-vZY">
+                    <rect key="frame" x="132.5" y="434.5" width="149" height="27"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="27" id="T4X-wL-x0W"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Tajawal-Bold" family="Tajawal" pointSize="27"/>
+                    <color key="textColor" red="0.93059355020000001" green="0.71116721630000002" blue="0.35089573260000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LjM-x0-BRe">
+                    <rect key="frame" x="113" y="802" width="188" height="45"/>
+                    <color key="backgroundColor" red="0.95173424480000002" green="0.94331425430000004" blue="0.94315391780000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="188" id="18b-AU-Bkz"/>
+                        <constraint firstAttribute="height" constant="45" id="t2m-Gn-EHC"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Tajawal-Bold" family="Tajawal" pointSize="18"/>
+                    <state key="normal" title="رفع شكوي">
+                        <color key="titleColor" name="#dull_red"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                            <real key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                            <size key="value" width="2" height="2"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                            <color key="value" systemColor="systemGray3Color"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="openUploadComplaintAction:" destination="-1" eventType="touchUpInside" id="FOy-tQ-Xou"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="X5y-kI-533" secondAttribute="bottom" id="14d-yw-cga"/>
+                <constraint firstItem="15u-q2-Wx2" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="6LE-Rz-Rt0"/>
+                <constraint firstItem="X5y-kI-533" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="8iZ-P0-Cfo"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="15u-q2-Wx2" secondAttribute="trailing" id="KGB-qx-eMm"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="LjM-x0-BRe" secondAttribute="bottom" constant="15" id="MyB-iL-ItL"/>
+                <constraint firstItem="b9M-Rt-vZY" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="ZWw-k3-oIM"/>
+                <constraint firstItem="b9M-Rt-vZY" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="bWH-BI-3g9"/>
+                <constraint firstItem="15u-q2-Wx2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="gGu-SF-Dwd"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="X5y-kI-533" secondAttribute="trailing" constant="20" id="mgU-ks-8Pr"/>
+                <constraint firstItem="LjM-x0-BRe" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="qHc-AD-gSU"/>
+                <constraint firstItem="X5y-kI-533" firstAttribute="top" secondItem="15u-q2-Wx2" secondAttribute="bottom" id="sMI-f5-6yD"/>
+            </constraints>
+            <point key="canvasLocation" x="40.579710144927539" y="50.892857142857139"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="#dull_red">
+            <color red="0.67100000381469727" green="0.22400000691413879" blue="0.22400000691413879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

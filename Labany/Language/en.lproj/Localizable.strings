@@ -1,0 +1,139 @@
+/* 
+ Localizable.strings
+ 
+ 
+ Created by Eman Gaber on 2/5/21.
+ Copyright © 2020 Eman Gaber. All rights reserved.
+ */
+
+"Internet_connection_error"="No internet connection";
+"Settings" = "Settings";
+"Find" = "Find";
+"Network" = "Network";
+"Notification" = "Notification";
+"Home" = "Home";
+"History"="History";
+"Register / Login"="Register / Login";
+"Provider Login" = "Provider Login";
+"Country"="Country";
+"Goverorate"="Goverorate";
+"Area"="Area";
+"Location"="Location";
+"Search by location"="Search by location";
+"Search by name"="Search by name";
+"SARCH"="SARCH";
+
+"Speciality"="Speciality";
+"providerType"="Provider type";
+"Type"="Type";
+"Login"="Login";
+"Logout"="Logout";
+"logout?"="Do you really want to logout?";
+"Lang"="عربي";
+"AboutMedexa"="About Medexa";
+"OurServices"="Our Services";
+"PrivacyPolicy"="Privacy Policy";
+"RateOurApp"="Rate Our App";
+"Support"="Support";
+"Facebook"="Facebook";
+"Notifications are empty"="Notifications are empty";
+"Favourites"="Favourites";
+
+"addtoFav"="Successfully added to favourites";
+"removeFromFav"="Delete this record from your favorites";
+"Submit"="SUBMIT";
+"Cancel"="CANCEL";
+"Ok"="Ok";
+"removedFromFav"="Removed from favourites successfully";
+"NoResultsFound"="No Results Found";
+
+//login
+"Kindly"="kindly fill in the required fields and press the button to proceed";
+"NationalNum"="National Number";
+"Password"="Password";
+"HavingTroubles"="Having troubles? please contact us";
+"Login"="LOG IN";
+"Register"="REGISTER ACCOUNT";
+"DoNotHaveAccount"="Don't have an account?";
+"ByUsingThisApp"="By using this app, you agree to our terms of service";
+
+"Login Successfully"="Login Successfully";
+"Register_account"="Register Account";
+"AlreadyRegistered"="Already Registered";
+"RegisterSuccessfully"="Register Successfully";
+"Please Fill all the mandatory fields"="Please Fill all the mandatory fields";
+"Warning"="Warning";
+"Please Enter password at minumum six characters"="Please Enter password at minumum six characters";
+"Nationalty"="Nationalty";
+
+"Security"="Security";
+"SecurityCheckFailure"="Security Check Failure";
+"Account_has_been_blocked"="Account has been blocked on this device, please contact customer service";
+"Login2"="Login";
+"To complete the registration process"="To complete the registration process, please enter your verification code, which was sent via text message to the number ";
+"VerificationCode"="Verification Code";
+"VERIFY"="VERIFY";
+"KindlyVerificationCode"="Kindly enter verification code";
+"within"="within";
+"Request_New_Code"="Request New Code";
+"EnterCorrectOTP"="Enter  Correct OTP";
+
+"AccountSecurity"="Account Security";
+"NewPassword"="New Password";
+"ConfirmNewPassword"="Confirm new password";
+"Submit"="SUBMIT";
+"Passwords not matched"="Passwords not matched";
+"IncorrectOTP"="Incorrect OTP";
+
+"Name"="Name";
+"Period"="Period";
+"NatioNo"="Natio No";
+"PolicyNo"="Policy No";
+"SubscribID"="Subscrib ID";
+"EmployeeNo"="Employee No";
+"InsuranceDegree"="Insurance Degree";
+"MaritalStatus"="Marital Status";
+"BirthDate"="Birth Date";
+"ScanQRCode"="Scan QR code to open a new visit";
+"Gender"="Gender";
+"Relation"="Relation";
+
+"This_account_is_already_registered"="This account is already registered, please log in.";
+"Error_happened"="Error happened";
+"choosePhone"="Choose Phone";
+"EnableAccount"="Enable Account";
+"EnableAdmin"="Enable Admin";
+"Enable Dependents Account" = "Enable Dependents Account";
+"The_Dependents_Account_will_be_activated"="The dependents account will be activated and the validity of the card will be transferred to his/here own device";
+"Please_enter_the_depenent_phone"="Please enter the (dependent) phone number to receive the verification code required in the registration process.";
+
+"EnterVerificationPhoneNumber"="Enter verification phone number";
+"Error"="Error";
+"Enable_Successfully"="Enable Successfully";
+"Disable_Successfully"="Disable Successfully";
+"Enable_admin_Successfully"="Enable Successfully";
+"Disable Dependents Account"="Disable Dependents Account";
+"account_will_be_susbended"="The dependant account will be suspended on his/her own device, please note that they can still receive the service through their card in your main account";
+"Disable_admin_Successfully"="Disable admin successfully";
+"Password changed successfully"="Password changed successfully";
+"Forget Password"="Forget Password";
+"Please enter national number"="Please enter national number";
+"please_contact_customer_service"="The process did not complete, please contact customer service";
+"Subscriber"="Subscriber";
+"BACK"="BACK";
+"Attachmet"="Attachmet";
+"Diagnosis"="Diagnosis";
+"Please Enter Phone"="Please Enter Phone";
+"There_are_no_attachments"="There are no attachments in this record";
+"Enable_Account"="Enable Account";
+"Enable_Admin"="Enable Admin";
+
+"forget_msg"="You will receive a verification code on the phone associated with the account";
+
+"No_phone_found"="Phone number not available, please check the entered number and contact the customer service";
+"this_account_not_enable"="This account is not Enabled , please call the customer service for assistance";
+"login_fail"="There is a problem, please contact customer service";
+"login_provider_error"="This feature is not available yet";
+"Login_success"="Login success";
+"please_Select_Paymet_Cash"="please select paymet Cash";
+"payment Type"="payment Type";

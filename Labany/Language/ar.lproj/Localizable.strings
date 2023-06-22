@@ -1,0 +1,137 @@
+/*
+ Localizable.strings
+ Created by Eman Gaber on 2/5/21.
+ Copyright © 2020 Eman Gaber. All rights reserved.
+ */
+
+"Internet_connection_error"="لا يوجد اتصال بالإنترنت";
+"Settings" = "الاعدادات";
+"Find" = "بحث";
+"Network" = "الاماكن";
+"Notification" = "الاشعارات";
+"Home" = "الرئيسية";
+"History"="السجل";
+"Register / Login"="تسجيل الدخول";
+"Provider Login" = "دخول مذود الخدمة";
+
+"Country"="الدولة";
+"Goverorate"="المحافظة";
+"Area"="المنطقة";
+"Location"="الموقع";
+"Notifications are empty"="التنبيهات فارغة";
+"Search by location"="البحث بالموقع";
+"Search by name"="البحث بالاسم";
+"SARCH"="بحث";
+"Speciality"="التخصص";
+"providerType"="مذود الخدمة";
+"Type"="النوع";
+
+"Login"="تسجيل الدخول";
+"Logout"="تسجيل الخروج";
+"logout?"="هل تريد بالغعل تسجيل الخروج ؟";
+"Lang"="Eglish";
+"AboutMedexa"="عن ميدكسا";
+"OurServices"="خدماتنا";
+"PrivacyPolicy"="سياسة خاصة";
+"RateOurApp"="قيم تتطبيقنا";
+"Support"="الدعم";
+"Facebook"="الفيسبوك";
+"Favourites"="المفضلة";
+"removeFromFav"="حذف هذا السجل من المفضلة";
+"addtoFav"="تمت الإضافة إلى المفضلة بنجاح";
+"Submit"="موافق";
+"Cancel"="إلغاء";
+"Ok"="موافق";
+"removedFromFav"="تم الحذف بنجاح";
+"NoResultsFound"="لا توجد نتائج";
+
+
+//login
+"Kindly"="يرجى تعبئة الحقول المطلوبة والضغط على الزر للمتابعة";
+"NationalNum"="الرقم الوطني";
+"Password"="كلمة المرور";
+"HavingTroubles"="هل تواجهك مشكلات؟ يرجى الاتصال بنا";
+"Login"="تسجيل الدخول";
+"Register"="تسجيل حساب";
+"DoNotHaveAccount"="ليس لديك حساب؟";
+"ByUsingThisApp"="باستخدام هذا التطبيق ، فإنك توافق على شروط الخدمة الخاصة بنا";
+
+"Login Successfully"="تم تسجيل الدخول بنجاح";
+"Register_account"="تسجيل حساب";
+"AlreadyRegistered"="مسجل بالفعل؟";
+"RegisterSuccessfully"="تم تسجيل الحساب بنجاح";
+"Please Fill all the mandatory fields"="الرجاء ملء كافة الحقول الإلزامية";
+"Warning"="تحذير";
+"Please Enter password at minumum six characters"="الرجاء إدخال كلمة المرور على الأقل ستة أحرف";
+"Nationalty"="الجنسية";
+
+"Security"="الأمان";
+"SecurityCheckFailure"="فشل فحص الأمان";
+"Account_has_been_blocked"="تم حظر الحساب على هذا الجهاز ، يرجى الاتصال بخدمة العملاء";
+"Login2"="تسجيل الدخول";
+"To complete the registration process"="لاستكمال عملية التسجيل، يرجى ادخال رمز التحقق  الخاص بك و الذي تم ارساله عبر رسالة نصية للرقم";
+"VerificationCode"="رمز التحقق";
+"VERIFY"="تحقق";
+"KindlyVerificationCode"="يرجى إدخال رمز التحقق";
+"within"="خلال";
+"Request_New_Code"="اطلب رمز جديد";
+"EnterCorrectOTP"="ادخل رمز بشكل صحيح";
+
+"AccountSecurity"="أمان الحساب";
+"NewPassword"="كلمة المرور الجديدة";
+"ConfirmNewPassword"="تأكيد كلمة المرور الجديدة";
+"Submit"="ارسال";
+"Passwords not matched"="كلمات المور غيرر متطابقة";
+"IncorrectOTP"="الرمز غير صحيح";
+
+
+"Name"="الاسم";
+"Period"="فترة التأمين";
+"NatioNo"="الرقم الوطني";
+"PolicyNo"="رقم البوليصة";
+"SubscribID"="رقم المشترك";
+"EmployeeNo"="الرقم الوظيفي";
+"InsuranceDegree"="درجة التأمين";
+"MaritalStatus"="الحالة الإجتماعية";
+"BirthDate"="تاريخ الميلاد";
+"ScanQRCode"="امسح رمز QR لفتح زيارة جديدة";
+"Gender"="الجنس";
+"Relation"="صلة القرابة";
+
+
+"This_account_is_already_registered"="تم تسجيل الحساب مسبقا، يرجى تسجيل الدخول";
+"Error_happened"="حدث خطأ ما";
+"choosePhone"="اختر تليفون";
+"EnableAccount"="تفعيل الحساب";
+"EnableAdmin"="تفعيل كمسؤول";
+"Enable Dependents Account" = "تفعيل حسابات المعالين";
+"The_Dependents_Account_will_be_activated"="سيتم تفعيل حساب المعال و عليه ستنتقل صلاحية استخدام البطاقة إلى جهازه الخاص";
+"Please_enter_the_depenent_phone"="يرجى إدخال رقم هاتف (المعال) لاستقبال رمز التحقق المطلوب في عملية التسجيل.";
+"EnterVerificationPhoneNumber"="يرجى إدخال رقم الهاتف للتحقق";
+"Error"="خطأ";
+"Enable_Successfully"="تم التفعيل بنجاح";
+"Disable_Successfully"="تم إلغاء التفعيل بنجاح";
+"Enable_admin_Successfully"="تم التفعيل بنجاح";
+"Disable Dependents Account"="إلغاء تفعيل الحساب";
+"account_will_be_susbended"="سيتم تعليق الحساب التابع على جهازه / جهازها الخاص ، يرجى ملاحظة أنه لا يزال بإمكانهم تلقي الخدمة من خلال بطاقتهم في حسابك الرئيسي";
+"Disable_admin_Successfully"="تم إلغاء التفعيل بنجاح";
+"Password changed successfully"="تم تغير كلمة المرور بنجاح";
+"Forget Password"="نسيت كلمة المرور";
+"Please enter national number"="من فضلك ادخل الرقم الوطني ";
+"please_contact_customer_service"="لم تكتمل العملية ، يرجى الاتصال بخدمة العملاء";
+"Subscriber"="المسجل";
+
+"BACK"="رجوع";
+"Attachmet"="مرفقات";
+"Diagnosis"="التشخيص";
+"Please Enter Phone"="الرجاء إدخال الهاتف";
+"There_are_no_attachments"="لا توجد مرفقات في هذا السجل";
+
+"forget_msg"="سوف تتلقى رمز التحقق على الهاتف المرتبط في الحساب";
+"No_phone_found"="لم يتم العثور على رقم هاتف معتمد في بياناتك، يرجى التأكد من الرقم المدخل و التواصل مع خدمة العملاء";
+"this_account_not_enable"="هذا الحساب غير مفَّعل ، يرجى الاتصال بخدمة العملاء للحصول على المساعدة";
+"login_fail"="يوجد هناك مشكلة ، يرجى الاتصال بخدمة العملاء";
+"login_provider_error"="هذه الميزة غير متوفرة الآن";
+"Login_success"="تم تسجيل الدخول بنجاح";
+"please_Select_Paymet_Cash"="من فضلك اختر طرريقة الدفع كاش أولا";
+"payment Type"="آلية الدفع";

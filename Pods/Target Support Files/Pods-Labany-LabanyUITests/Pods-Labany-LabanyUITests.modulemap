@@ -1,0 +1,6 @@
+framework module Pods_Labany_LabanyUITests {
+  umbrella header "Pods-Labany-LabanyUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
