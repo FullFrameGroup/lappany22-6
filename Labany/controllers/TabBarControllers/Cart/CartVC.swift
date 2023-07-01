@@ -92,7 +92,6 @@ class CartVC: BaseVC{
             selectAddress  = UserDefaults.standard.getAddress()
         }
         btnMakeOrderrCash.backgroundColor = .lightGray
-        cashBtn.isHidden = true
         do {
 //            if #available(iOS 13.4, *) {
 //                datepickerr.preferredDatePickerStyle =  .compact
