@@ -42,7 +42,8 @@ extension UIBarButtonItem: AnchorView {
 
 /// A Material Design drop down in replacement for `UIPickerView`.
 public final class DropDown: UIView {
-
+    public var langNum = ""
+        public var isTransform = false
 	//TODO: handle iOS 7 landscape mode
 
 	/// The dismiss mode for a drop down.
@@ -112,8 +113,6 @@ public final class DropDown: UIView {
 	See `Direction` enum for more info.
 	*/
 	public var direction = Direction.any
-    public var langNum = ""
-    public var isTransform = false
 
 	/**
 	The offset point relative to `anchorView` when the drop down is shown above the anchor view.
@@ -1075,20 +1074,7 @@ extension DropDown: UITableViewDataSource, UITableViewDelegate {
 		} else {
 			cell.optionLabel.text = dataSource[index]
 		}
-        
-        if langNum == "1" {
-         cell.optionLabel.textAlignment = .right
-        }else
-        {
-            cell.optionLabel.textAlignment = .left
-
-        }
-        
-        cell.optionLabel.font = UIFont.init(name: "Tajawal-Medium", size: 13)
-        
-        if isTransform == true {
-            cell.contentView.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
-        }
+		
 		customCellConfiguration?(index, dataSource[index], cell)
 	}
 

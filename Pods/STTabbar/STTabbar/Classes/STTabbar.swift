@@ -31,13 +31,13 @@ public final class STTabbar: UITabBar {
         shapeLayer.strokeColor = UIColor.clear.cgColor
         shapeLayer.fillColor = tabbarColor.cgColor
         shapeLayer.lineWidth = 0
-      
+        
         //The below 4 lines are for shadow above the bar. you can skip them if you do not want a shadow
         shapeLayer.shadowOffset = CGSize(width:0, height:0)
         shapeLayer.shadowRadius = 10
         shapeLayer.shadowColor = UIColor.gray.cgColor
         shapeLayer.shadowOpacity = 0.3
-       
+        
         if let oldShapeLayer = self.shapeLayer {
             self.layer.replaceSublayer(oldShapeLayer, with: shapeLayer)
         } else {
@@ -47,7 +47,6 @@ public final class STTabbar: UITabBar {
         self.tintColor = centerButtonColor
         self.unselectedItemTintColor = unselectedItemColor
         self.setupMiddleButton()
-        
     }
     
     override public func draw(_ rect: CGRect) {
@@ -101,9 +100,6 @@ public final class STTabbar: UITabBar {
         //add to the tabbar and add click event
         self.addSubview(centerButton)
         centerButton.addTarget(self, action: #selector(self.centerButtonAction), for: .touchUpInside)
-        
-        
-      
     }
     
     // Menu Button Touch Action

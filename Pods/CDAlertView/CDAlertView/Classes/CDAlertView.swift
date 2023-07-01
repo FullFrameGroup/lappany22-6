@@ -65,13 +65,13 @@ open class CDAlertView: UIView {
         }
     }
 
-    public var messageFont: UIFont = UIFont.init(name:"Tajawal-Medium", size: 15)! {
+    public var messageFont: UIFont = UIFont.systemFont(ofSize: 13) {
         didSet {
             messageLabel.font = messageFont
         }
     }
 
-    public var textFieldFont: UIFont = UIFont.init(name:"Tajawal-Medium", size: 15)! {
+    public var textFieldFont: UIFont = UIFont.systemFont(ofSize: 15) {
         didSet {
             textField.font = textFieldFont
         }
