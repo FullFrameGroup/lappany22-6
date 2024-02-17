@@ -56,9 +56,13 @@ extension CartVC : UICollectionViewDelegate , UICollectionViewDataSource, UIColl
         cash = false
         switch type {
         case "فيزا":
-            requestCheckoutID(type:"VISA")
+            if checkForError() {
+                requestCheckoutID(type:"VISA")
+            }
         case "مدى":
-            requestCheckoutID(type:"MADA")
+            if checkForError() {
+                requestCheckoutID(type:"MADA")
+            }
         default:
             break
         }
