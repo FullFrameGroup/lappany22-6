@@ -718,8 +718,8 @@ extension CartVC
         paymentHandler?.paymentType = type
         HUD.show(.progress, onView: self.view)
         
-        paymentHandler?.theRequestCheckoutID(amount:Int(totalCaluctPrice ?? 1.0),cartId: cartObjc?.cart_id ?? 0,paymentMethod: type)
-//        paymentHandler?.theRequestCheckoutID(amount:Int(1.0),cartId: cartObjc?.cart_id ?? 0,paymentMethod: type)
+//        paymentHandler?.theRequestCheckoutID(amount:Int(totalCaluctPrice ?? 1.0),cartId: cartObjc?.cart_id ?? 0,paymentMethod: type)
+        paymentHandler?.theRequestCheckoutID(amount:Int(1.0),cartId: cartObjc?.cart_id ?? 0,paymentMethod: type)
     }
 }
 extension CartVC:  OnlinePaymentHandlerDelegate ,SFSafariViewControllerDelegate {
