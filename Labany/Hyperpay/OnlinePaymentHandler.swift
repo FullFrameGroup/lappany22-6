@@ -88,7 +88,7 @@ class OnlinePaymentHandler: NSObject {
     
     
     func theRequestCheckoutID(amount: Int,cartId:Int,paymentMethod:String)
-    {// 1 
+    {// 1 //amount
         PaymetEndPoint.createCheckOutApi(amount: amount, method: "payment",merchantTransactionId:cartId, paymentMethod: paymentMethod) { (checkoutID, error) in
             if let error = error {
 
