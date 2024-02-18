@@ -462,63 +462,70 @@ class CartVC: BaseVC{
     
     
    // call when payment success
-    public func MakeOrder(paymetType:String){
-        
-        if selectAddress == ""
-        {
+    func checkForError()->Bool{
+        if selectAddress.isEmpty{
          showMessage(msg: "اختر عنوان التوصيل", type: .notification)
-        }else if selectedDate == nil || selectedDate == ""
+            return false
+        }else if selectedDate.isEmpty
         {
          showMessage(msg: "اختر تاريخ التوصيل", type: .notification)
-        }else if selectedTime == nil || selectedTime == ""{
+            return false
+        }else if selectedTime.isEmpty{
             showMessage(msg: "اختر ووقت التوصيل", type: .notification)
-        }else
-        {
-           
-     if isConnectedToInternet() {
-         let copuneCode = tfCoupon.text!
-         guard let userId = AppDelegate.getUserData()?.id else{return}
-         var itemsStr = "["
-         for item in cartVM.cartItemsArr ?? []
-         {
-             
-             itemsStr.append("{\"id\":\(item.product_id ?? 0),\"qty\":\(item.qty ?? 0),\"unit_price\":\(item.qty_price ?? 0),\"total_price\":\(item.total_price ?? 0)},")
-         }
-         
-         var newStr = itemsStr.dropLast()
-         newStr.append("]")
-
-         var sdAmount = "0.0"
-         if tfWalletAmount.text != ""
-         {
-             sdAmount = "\(tfWalletAmount.text!) ريال"
-         }
-         let parameters = [    "user_id":userId,
-                               "cart_id":cartVM.cartData?.cart_id! ?? 0,
-                               "ship_id":shippingId,
-                               "sd_amount":sdAmount,
-                               "ship_charge":cartVM.cartData?.shipping ?? 1,
-                               "tax": cartVM.cartData?.tax ?? 1,
-                               "total_payment":totalCaluctPrice ?? 0,
-                               "payment_type":paymetType,
-                               "time":timeString,
-                               "date":selectedDateForApi! ,
-                               "coupon_code":"\(copuneCode)",
-                               "coupon_id":cartVM.couponDetail?.coupon_id ?? 0,
-                               "discount":discount ?? 0,
-                               "campaign_id":0,
-                               "campaign_type":0,
-                               "campaign_value":0,
-                               "campaign_code":0,
-                               "additional_discount":0,
-                               "cart_items":newStr] as [String : Any]
-         
-         print(parameters)
-         cartVM.addOderApi(parameters: parameters)
-     }else{
-         showNoInternetAlert()
-     }
+            return false
+        }else{
+            return true
         }
+    }
+    public func MakeOrder(paymetType:String){
+        
+//        if checkForError() {
+            
+            
+            if isConnectedToInternet() {
+                let copuneCode = tfCoupon.text!
+                guard let userId = AppDelegate.getUserData()?.id else{return}
+                var itemsStr = "["
+                for item in cartVM.cartItemsArr ?? []
+                {
+                    
+                    itemsStr.append("{\"id\":\(item.product_id ?? 0),\"qty\":\(item.qty ?? 0),\"unit_price\":\(item.qty_price ?? 0),\"total_price\":\(item.total_price ?? 0)},")
+                }
+                
+                var newStr = itemsStr.dropLast()
+                newStr.append("]")
+                
+                var sdAmount = "0.0"
+                if tfWalletAmount.text != ""
+                {
+                    sdAmount = "\(tfWalletAmount.text!) ريال"
+                }
+                let parameters = [    "user_id":userId,
+                                      "cart_id":cartVM.cartData?.cart_id! ?? 0,
+                                      "ship_id":shippingId,
+                                      "sd_amount":sdAmount,
+                                      "ship_charge":cartVM.cartData?.shipping ?? 1,
+                                      "tax": cartVM.cartData?.tax ?? 1,
+                                      "total_payment":totalCaluctPrice ?? 0,
+                                      "payment_type":paymetType,
+                                      "time":timeString,
+                                      "date":selectedDateForApi! ,
+                                      "coupon_code":"\(copuneCode)",
+                                      "coupon_id":cartVM.couponDetail?.coupon_id ?? 0,
+                                      "discount":discount ?? 0,
+                                      "campaign_id":0,
+                                      "campaign_type":0,
+                                      "campaign_value":0,
+                                      "campaign_code":0,
+                                      "additional_discount":0,
+                                      "cart_items":newStr] as [String : Any]
+                
+                print(parameters)
+                cartVM.addOderApi(parameters: parameters)
+            }else{
+                showNoInternetAlert()
+            }
+//        }
  }
     
     
