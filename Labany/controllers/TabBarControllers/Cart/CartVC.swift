@@ -331,6 +331,7 @@ class CartVC: BaseVC{
        {
            self.paymentType = (notification.userInfo!["paymet_type"] as! String)
            print(self.paymentType)
+           addPayment(paymetType: paymentType ?? "", data: notification.userInfo?["data"] as! ResponseClass, checkoutId: notification.userInfo?["checkout_id"] as! String)
            MakeOrder(paymetType: paymentType ?? "")
        }
     @IBAction func dateAction(_ sender: UIDatePicker) {
@@ -477,6 +478,20 @@ class CartVC: BaseVC{
             return true
         }
     }
+    func addPayment(paymetType:String,data:ResponseClass,checkoutId:String){
+        guard let userId = AppDelegate.getUserData()?.id else{return}
+        let parameters = [    "user_id":userId,
+                              "card_amt":totalCaluctPrice ?? 0,
+                              "transaction_id":data.id,
+                              "checkoutId":checkoutId,
+                              "payment_info":data.paymentBrand,
+                              "card_number": data.card.last4Digits,
+                              "card_holdername":data.card.holder,
+                              "card_expairdate":"\(data.card.expiryMonth)/\(data.card.expiryYear)"] as [String : Any]
+        
+        //print(parameters)
+        cartVM.addPaymentApi(parameters: parameters)
+    }
     public func MakeOrder(paymetType:String){
         
 //        if checkForError() {
@@ -520,7 +535,7 @@ class CartVC: BaseVC{
                                       "additional_discount":0,
                                       "cart_items":newStr] as [String : Any]
                 
-                print(parameters)
+                // print(parameters)
                 cartVM.addOderApi(parameters: parameters)
             }else{
                 showNoInternetAlert()

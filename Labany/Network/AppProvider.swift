@@ -13,6 +13,7 @@ enum AppProvider {
     case addToCart(userId:Int,param:[String : Any])
     case addOrder(param:[String : Any])
     case addRate(param:[String : Any])
+    case addPayment(param:[String:Any])
 
 }
 
@@ -41,6 +42,8 @@ extension AppProvider: TargetType {
             
         case .addRate:
             return "save_feedback_questions.php"
+        case .addPayment:
+            return "add_payment_detail.php"
         }
     }
     
@@ -57,7 +60,8 @@ extension AppProvider: TargetType {
             
         case .addRate(let param):
             return param
-                
+        case .addPayment(let param):
+            return param
         default:
             return [:]
         }
@@ -68,7 +72,7 @@ extension AppProvider: TargetType {
     //==================
     var method: Moya.Method {
         switch self {
-        case .addToCart, .addOrder, .addRate:
+        case .addToCart, .addOrder, .addRate,.addPayment:
             return .post
 
         }
@@ -86,7 +90,7 @@ extension AppProvider: TargetType {
     //======================
     var task: Task {
         switch self {
-        case .addToCart, .addOrder,.addRate:
+        case .addToCart, .addOrder,.addRate,.addPayment:
             return .requestParameters(parameters: self.parameters, encoding: JSONEncoding.default)
       
         }

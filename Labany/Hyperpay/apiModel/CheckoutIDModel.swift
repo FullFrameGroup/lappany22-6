@@ -45,3 +45,47 @@ struct CheckOutData: Codable {
         case customerEmail = "customer_email"
     }
 }
+struct PaymentCheckResponse: Codable {
+    let code: Int
+    let data: DataClass
+    let msg: String
+    let success: Bool
+}
+
+struct DataClass: Codable {
+    //let resourcePath: String
+    let response: ResponseClass
+}
+
+struct ResponseClass: Codable {
+    let buildNumber: String
+    let card: Card2
+    let id: String
+    let merchantInvoiceId: String
+    let merchantTransactionId: String
+    let ndc: String
+    let paymentBrand: String
+    let paymentType: String
+    let timestamp: String
+}
+
+struct Card2: Codable {
+    let bin: String
+    let binCountry: String
+    let binType: String
+    let country: String
+    let expiryMonth: String
+    let expiryYear: String
+    let holder: String
+    let issuer: Issuer
+    let last4Digits: String
+    let level: String
+    let maxPanLength: String
+    let regulatedFlag: String
+    let type: String
+}
+
+struct Issuer: Codable {
+    let bank: String
+    let website: String
+}

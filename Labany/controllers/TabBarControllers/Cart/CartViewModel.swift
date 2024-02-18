@@ -85,7 +85,8 @@ class CartViewModel {
             self.delegate?.killLoading()
                          switch result {
                          case let .success(moyaResponse):
-                           let jobsResponse = try? moyaResponse.map(MakeOrderModel.self)
+                             print("Add Order Response:\(String(data:moyaResponse.data,encoding: .utf8))")
+                                let jobsResponse = try? moyaResponse.map(MakeOrderModel.self)
                           //  print(jobsResponse)
                             
                            if jobsResponse?.code == 200
@@ -207,4 +208,34 @@ class CartViewModel {
                 }
         
             }
+    
+    
+    func addPaymentApi(parameters: [String : Any]){
+        appProvider.request(.addPayment(param: parameters)) { result in
+            self.delegate?.killLoading()
+                         switch result {
+                         case let .success(moyaResponse):
+                             print("Add Payment Response:\(String(data:moyaResponse.data,encoding: .utf8))")
+                           let jobsResponse = try? moyaResponse.map(MakeOrderModel.self)
+                          //  print(jobsResponse)
+                            
+                           if jobsResponse?.code == 200
+                           {
+                            self.delegate?.orderAddedSuccessfully(msg:jobsResponse?.msg ?? "")
+
+                           }
+                          else
+                           {
+                              let message = jobsResponse?.msg
+                              
+                            self.delegate?.orderAddFail(message: message ?? "")
+                              
+                              
+                           }
+                            
+                         case let .failure(error):
+                             break
+                         }
+                     }
+   }
 }

@@ -205,6 +205,8 @@ class APIs {
    public func createCheckOutApi() -> String {
        return baseUrl + "paymenthypnew.php"
    }
-    
+    public func createAddPaymentApi() -> String {
+        return baseUrl + "add_payment_detail.php"
+    }
     
 }

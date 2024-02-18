@@ -48,7 +48,7 @@ class PaymetEndPoint {
     
     
     
-    class func checkPaymentStatus(merchantTransactionId:String,merchantInvoiceId:String, resourcePath:String,method:String, completionHundler: @escaping (String?,String?) -> Void){
+    class func checkPaymentStatus(merchantTransactionId:String,merchantInvoiceId:String, resourcePath:String,method:String, completionHundler: @escaping (PaymentCheckResponse?,String?) -> Void){
         
            let parameters = ["merchantTransactionId":merchantTransactionId,
                              "merchantInvoiceId":merchantInvoiceId,
@@ -63,12 +63,12 @@ class PaymetEndPoint {
                }else{
                    if error == nil{
                        do {
-                           let parsedResult = try JSONDecoder().decode(CheckoutIDModel?.self,from:(response?.data)!)
-                           
-                           //print(parsedResult)
+                           let parsedResult = try JSONDecoder().decode(PaymentCheckResponse?.self,from:(response?.data)!)
+                            
+                           print("Data Come Frome HyperPay!!!!!!!!!!!!!!","/n",parsedResult)
                            if parsedResult?.success == true
                            {
-                               completionHundler(parsedResult?.msg,nil)
+                               completionHundler(parsedResult,nil)
                                
                            }else
                            {

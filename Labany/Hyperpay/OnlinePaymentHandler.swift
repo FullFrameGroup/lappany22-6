@@ -186,10 +186,10 @@ class OnlinePaymentHandler: NSObject {
             if transactionInfo != nil {
                 PaymetEndPoint.checkPaymentStatus(merchantTransactionId: "\(General.sharedInstance.cartID)", merchantInvoiceId: "\(General.sharedInstance.cartID)", resourcePath: resourcePath, method: "check_payment") { (result, error) in
                     if let result = result {
-                        print(result)
+                        print(result.msg)
                         //self.paymentStatusDetails = result
                         
-                        NotificationCenter.default.post(name: Notification.Name("callMakeOrderAPi"),object: nil,userInfo:["paymet_type":self.paymentType])
+                        NotificationCenter.default.post(name: Notification.Name("callMakeOrderAPi"),object: nil,userInfo:["paymet_type":self.paymentType,"checkout_id":self.checkoutID!,"data":result.data.response])
 
                         
                     } else {
