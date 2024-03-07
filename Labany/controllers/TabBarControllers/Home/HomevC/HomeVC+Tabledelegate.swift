@@ -57,14 +57,8 @@ extension HomeVC : UITableViewDelegate,UITableViewDataSource {
 
     }
     
-
-
-    
-    
     func dismissDialog() {
         dismissDialogViewController(LSAnimationPattern.fadeInOut)
     }
     
-
-
 }

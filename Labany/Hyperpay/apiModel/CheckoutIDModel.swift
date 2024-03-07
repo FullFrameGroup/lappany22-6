@@ -87,5 +87,5 @@ struct Card2: Codable {
 
 struct Issuer: Codable {
     let bank: String
-    let website: String
+    let website: String?
 }

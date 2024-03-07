@@ -43,7 +43,7 @@ class CartViewModel {
     var visaArr:[VisaTypeModel]?
     var cartItemsArr:[CartItemsModel]?
     var timesArr:[TimesOpen]?
-  
+    var orderId:Int?
     func getCartData(user_id:Int) {
             self.delegate?.showLoading()
             CartWebServices.getCartApi(user_id:user_id ){ [weak self] (data, error) in
@@ -78,37 +78,44 @@ class CartViewModel {
     }
     
     
-    func addOderApi(parameters: [String : Any]){
+    func addOderApi(parameters: [String : Any], _ completion: @escaping (_ orderId: String?, _ error: Error?) -> Void) {
         self.delegate?.showLoading()
-
         appProvider.request(.addOrder(param: parameters)) { result in
+            print("Add Order API Param",parameters)
+            print(result)
             self.delegate?.killLoading()
-                         switch result {
-                         case let .success(moyaResponse):
-                             print("Add Order Response:\(String(data:moyaResponse.data,encoding: .utf8))")
-                                let jobsResponse = try? moyaResponse.map(MakeOrderModel.self)
-                          //  print(jobsResponse)
-                            
-                           if jobsResponse?.code == 200
-                           {
-                            self.delegate?.orderAddedSuccessfully(msg:jobsResponse?.msg ?? "")
+            
+            switch result {
+            case let .success(moyaResponse):
+                
+                print("Add Order API",moyaResponse.request?.url,moyaResponse.request?.description,String(data: moyaResponse.data, encoding: .utf8))
+                if let jobsResponse = try? moyaResponse.map(MakeOrderModel.self) {
+                    print("Add Order Response:", jobsResponse)
+                    
+                    if jobsResponse.code == 200 {
+                        if let orderId = jobsResponse.data?.order_id {
+                            completion("\(orderId)", nil)
+                            self.delegate?.orderAddedSuccessfully(msg: jobsResponse.msg ?? "")
+                        } else {
+                            completion(nil, NSError(domain: "addOderApi", code: 0, userInfo: [NSLocalizedDescriptionKey: "Order ID not found in response"]))
+                        }
+                    } else {
+                        let message = jobsResponse.msg
+                        let error = NSError(domain: "addOderApi", code: jobsResponse.code ?? 500, userInfo: [NSLocalizedDescriptionKey: message ?? "Unknown error"])
+                        completion(nil, error)
+                        self.delegate?.orderAddFail(message: message ?? "")
+                    }
+                } else {
+                    let error = NSError(domain: "addOderApi", code: 0, userInfo: [NSLocalizedDescriptionKey: "Failed to parse response"])
+                    completion(nil, error)
+                }
+                
+            case let .failure(error):
+                completion(nil, error)
+            }
+        }
+    }
 
-                           }
-                          else
-                           {
-                              let message = jobsResponse?.msg
-                              
-                            self.delegate?.orderAddFail(message: message ?? "")
-                              
-                              
-                           }
-                            
-                         case let .failure(error):
-                             break
-                         }
-                     }
-   }
-    
     var coupon:CouponData?
     var couponDetail:CouponDetails?
     
@@ -210,32 +217,5 @@ class CartViewModel {
             }
     
     
-    func addPaymentApi(parameters: [String : Any]){
-        appProvider.request(.addPayment(param: parameters)) { result in
-            self.delegate?.killLoading()
-                         switch result {
-                         case let .success(moyaResponse):
-                             print("Add Payment Response:\(String(data:moyaResponse.data,encoding: .utf8))")
-                           let jobsResponse = try? moyaResponse.map(MakeOrderModel.self)
-                          //  print(jobsResponse)
-                            
-                           if jobsResponse?.code == 200
-                           {
-                            self.delegate?.orderAddedSuccessfully(msg:jobsResponse?.msg ?? "")
-
-                           }
-                          else
-                           {
-                              let message = jobsResponse?.msg
-                              
-                            self.delegate?.orderAddFail(message: message ?? "")
-                              
-                              
-                           }
-                            
-                         case let .failure(error):
-                             break
-                         }
-                     }
-   }
+    
 }

@@ -84,7 +84,6 @@ class CartVC: BaseVC{
     var timeNow = ""
     var selected = ""
     var selectCash = 0
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         if UserDefaults.standard.getAddress() != "" {
@@ -165,7 +164,6 @@ class CartVC: BaseVC{
         }
         
         visaCollection.semanticContentAttribute = .forceRightToLeft
-
     }
     
  
@@ -331,8 +329,12 @@ class CartVC: BaseVC{
        {
            self.paymentType = (notification.userInfo!["paymet_type"] as! String)
            print(self.paymentType)
-           addPayment(paymetType: paymentType ?? "", data: notification.userInfo?["data"] as! ResponseClass, checkoutId: notification.userInfo?["checkout_id"] as! String)
-           MakeOrder(paymetType: paymentType ?? "")
+           guard let responseData =  notification.userInfo?["data"] as? ResponseClass else{
+               print("No Response for hyperPay or Payment faild")
+               return
+           }
+          // addPayment(paymetType: paymentType ?? "", data: responseData, checkoutId: notification.userInfo?["checkout_id"] as! String)
+           MakeOrder(paymetType: paymentType ?? "", data: responseData, checkoutId: notification.userInfo?["checkout_id"] as? String)
        }
     @IBAction func dateAction(_ sender: UIDatePicker) {
 
@@ -478,25 +480,98 @@ class CartVC: BaseVC{
             return true
         }
     }
-    func addPayment(paymetType:String,data:ResponseClass,checkoutId:String){
+    func addPayment(paymetType:String,data:ResponseClass,checkoutId:String,orderId:String){
         guard let userId = AppDelegate.getUserData()?.id else{return}
-        let parameters = [    "user_id":userId,
-                              "card_amt":totalCaluctPrice ?? 0,
-                              "transaction_id":data.id,
-                              "checkoutId":checkoutId,
-                              "payment_info":data.paymentBrand,
-                              "card_number": data.card.last4Digits,
-                              "card_holdername":data.card.holder,
-                              "card_expairdate":"\(data.card.expiryMonth)/\(data.card.expiryYear)"] as [String : Any]
-        
+        do {
+            let jsonData = try JSONEncoder().encode(data)
+            guard let paymentInfoString = String(data: jsonData, encoding: .utf8) else {
+                 print("Failed to convert payment info data to string")
+                 return
+             }
+            let parameters = [
+                "user_id":userId,
+                "card_amt":totalCaluctPrice ?? 1,
+                "transaction_id":data.id,
+                "checkoutId":checkoutId,
+                "payment_info":paymentInfoString,
+                "card_number": data.card.last4Digits,
+                "card_holdername":data.card.holder,
+                "card_expairdate":"\(data.card.expiryMonth)/\(data.card.expiryYear)",
+                "order_id":orderId
+            ] as [String : Any]
+            print("Add Payment body:\(parameters)")
+            addPayment(parameters: parameters) { dic, error in
+                if let dic {
+                    print(dic)
+                }
+                if let error {
+                    print(error.localizedDescription)
+                }
+            }
+        }catch {
+            print("Can't Decode an Error")
+        }
+       
         //print(parameters)
-        cartVM.addPaymentApi(parameters: parameters)
+        //cartVM.addPaymentApi(parameters: parameters)
+        
     }
-    public func MakeOrder(paymetType:String){
+
+
+    private func addPayment(parameters: [String: Any], completion: @escaping ([String: Any]?, Error?) -> Void) {
+        let url = URL(string: "https://nokhbaapp.com/new/api_v4/add_payment_detail.php")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        // Generate a boundary string
+        let boundary = "Boundary-\(UUID().uuidString)"
+        // Set the content type header of the request
+        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+        request.setValue("WYLUnBhBpGltg?##$%%^Y##$GZWcXfIW", forHTTPHeaderField: "x_api_key")
+        
+        // Create a mutable data object to hold the request body
+        var body = Data()
+        
+        // Append the parameters as form data
+        for (key, value) in parameters {
+            // Add the boundary separator
+            body.append("--\(boundary)\r\n".data(using: .utf8)!)
+            // Add the content disposition header
+            body.append("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n".data(using: .utf8)!)
+            // Add the value
+            body.append("\(value)\r\n".data(using: .utf8)!)
+        }
+        
+        // Append the end boundary
+        body.append("--\(boundary)--\r\n".data(using: .utf8)!)
+        
+        // Set the request body
+        request.httpBody = body
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            guard let data = data, error == nil else {
+                print("Error: \(error?.localizedDescription ?? "No data")")
+                completion(nil, error)
+                return
+            }
+            
+            do {
+                if let responseObj = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                    print("Add Payment Response:\(responseObj)")
+                    completion(responseObj, nil)
+                }
+            } catch {
+                print("Error: \(error.localizedDescription)")
+                completion(nil, error)
+            }
+        }
+        
+        task.resume()
+    }
+
+
+    public func MakeOrder(paymetType:String,data:ResponseClass? = nil,checkoutId:String? = nil){
         
 //        if checkForError() {
-            
-            
             if isConnectedToInternet() {
                 let copuneCode = tfCoupon.text!
                 guard let userId = AppDelegate.getUserData()?.id else{return}
@@ -524,7 +599,7 @@ class CartVC: BaseVC{
                                       "total_payment":totalCaluctPrice ?? 0,
                                       "payment_type":paymetType,
                                       "time":timeString,
-                                      "date":selectedDateForApi! ,
+                                      "date":selectedDate,
                                       "coupon_code":"\(copuneCode)",
                                       "coupon_id":cartVM.couponDetail?.coupon_id ?? 0,
                                       "discount":discount ?? 0,
@@ -536,7 +611,16 @@ class CartVC: BaseVC{
                                       "cart_items":newStr] as [String : Any]
                 
                 // print(parameters)
-                cartVM.addOderApi(parameters: parameters)
+                cartVM.addOderApi(parameters: parameters){[weak self] id,e in
+                    if let e {
+                        print(e.localizedDescription)
+                        return
+                    }
+                    if paymetType != "CASH" {
+                        guard let self,let id else{return}
+                        self.addPayment(paymetType: paymetType, data: data!, checkoutId: checkoutId!, orderId: id)
+                    }
+                }
             }else{
                 showNoInternetAlert()
             }
@@ -718,8 +802,8 @@ extension CartVC
         paymentHandler?.paymentType = type
         HUD.show(.progress, onView: self.view)
         
-//        paymentHandler?.theRequestCheckoutID(amount:Int(totalCaluctPrice ?? 1.0),cartId: cartObjc?.cart_id ?? 0,paymentMethod: type)
-        paymentHandler?.theRequestCheckoutID(amount:Int(1.0),cartId: cartObjc?.cart_id ?? 0,paymentMethod: type)
+        paymentHandler?.theRequestCheckoutID(amount:Int(totalCaluctPrice ?? 1.0),cartId: cartObjc?.cart_id ?? 0,paymentMethod: type)
+     //   paymentHandler?.theRequestCheckoutID(amount:Int(1.0),cartId: cartObjc?.cart_id ?? 0,paymentMethod: type)
     }
 }
 extension CartVC:  OnlinePaymentHandlerDelegate ,SFSafariViewControllerDelegate {

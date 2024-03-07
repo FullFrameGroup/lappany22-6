@@ -193,6 +193,7 @@ class OnlinePaymentHandler: NSObject {
 
                         
                     } else {
+//                        NotificationCenter.default.post(name: Notification.Name("callMakeOrderAPi"),object: nil,userInfo:["paymet_type":self.paymentType,"checkout_id":self.checkoutID!,"data":result?.data.response])
                         self.delegate?.transactionFailed(error: error)
                     }
                 }

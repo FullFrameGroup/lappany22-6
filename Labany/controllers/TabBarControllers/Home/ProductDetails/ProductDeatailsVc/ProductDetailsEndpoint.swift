@@ -55,13 +55,14 @@ class PdoductDetailsWebServices {
     
     
     
-     func addToCartApi(user_id:Int,parameters: [String : Any], completionHundler: @escaping (MakeOrderModel?,String?) -> Void){
+     func addToCartApi(user_id:Int,parameters: [String : Any], completionHundler: @escaping (MakeOrderModel2?,String?) -> Void){
 
         appProvider.request(.addToCart(userId: user_id, param: parameters)) { result in
 
                           switch result {
                           case let .success(moyaResponse):
-                            let jobsResponse = try? moyaResponse.map(MakeOrderModel.self)
+                              print(String(data: moyaResponse.data, encoding: .utf8))
+                            let jobsResponse = try? moyaResponse.map(MakeOrderModel2.self)
                             if jobsResponse?.success == false
                             {
                                 completionHundler(jobsResponse,jobsResponse?.msg)

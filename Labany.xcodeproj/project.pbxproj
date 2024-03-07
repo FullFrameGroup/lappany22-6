@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		0E72257FE5316552CC798D43 /* Pods_Labany_LabanyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97CDDD8B0257D41E7786A738 /* Pods_Labany_LabanyUITests.framework */; };
 		3AE3CE006660FD7CBBE0FD89 /* Pods_LabanyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B577F778220D47745AE1D708 /* Pods_LabanyTests.framework */; };
-		A63DF26C2B7A75160053ADE8 /* OPPWAMobile.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63DF2682B7A74FB0053ADE8 /* OPPWAMobile.xcframework */; };
-		A63DF26D2B7A75160053ADE8 /* OPPWAMobile.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A63DF2682B7A74FB0053ADE8 /* OPPWAMobile.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A63DF26E2B7A75180053ADE8 /* ipworks3ds_sdk_8546.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63DF2692B7A74FC0053ADE8 /* ipworks3ds_sdk_8546.xcframework */; };
-		A63DF26F2B7A75180053ADE8 /* ipworks3ds_sdk_8546.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A63DF2692B7A74FC0053ADE8 /* ipworks3ds_sdk_8546.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C33E7AD428FC7F4A00BE3928 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = C33E7AD328FC7F4A00BE3928 /* GoogleSignIn */; };
 		C33E7AD628FC7F4A00BE3928 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C33E7AD528FC7F4A00BE3928 /* GoogleSignInSwift */; };
+		C3440E0E2B83624700CC9EB7 /* OPPWAMobile.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3440E0B2B83623600CC9EB7 /* OPPWAMobile.xcframework */; };
+		C3440E0F2B83624700CC9EB7 /* OPPWAMobile.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C3440E0B2B83623600CC9EB7 /* OPPWAMobile.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C3440E102B83624900CC9EB7 /* ipworks3ds_sdk_8546.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3440E0A2B83623500CC9EB7 /* ipworks3ds_sdk_8546.xcframework */; };
+		C3440E112B83624900CC9EB7 /* ipworks3ds_sdk_8546.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C3440E0A2B83623500CC9EB7 /* ipworks3ds_sdk_8546.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C35521AA298BE0B400A6F56C /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = C35521A9298BE0B400A6F56C /* Moya */; };
 		E705FD73283E8366001F53C1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E705FD6E283E8366001F53C1 /* Localizable.strings */; };
 		E705FD74283E8366001F53C1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E705FD71283E8366001F53C1 /* Localizable.strings */; };
@@ -346,8 +346,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A63DF26F2B7A75180053ADE8 /* ipworks3ds_sdk_8546.xcframework in Embed Frameworks */,
-				A63DF26D2B7A75160053ADE8 /* OPPWAMobile.xcframework in Embed Frameworks */,
+				C3440E112B83624900CC9EB7 /* ipworks3ds_sdk_8546.xcframework in Embed Frameworks */,
+				C3440E0F2B83624700CC9EB7 /* OPPWAMobile.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,10 +359,10 @@
 		168453287E3B1245E807B6EB /* Pods-Labany.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Labany.debug.xcconfig"; path = "Target Support Files/Pods-Labany/Pods-Labany.debug.xcconfig"; sourceTree = "<group>"; };
 		55C0F25B1F4BE48B4945F2FB /* Pods-LabanyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LabanyTests.debug.xcconfig"; path = "Target Support Files/Pods-LabanyTests/Pods-LabanyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		97CDDD8B0257D41E7786A738 /* Pods_Labany_LabanyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Labany_LabanyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A63DF2682B7A74FB0053ADE8 /* OPPWAMobile.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = OPPWAMobile.xcframework; path = "../Hyperpay SDK_6.2.0/Hyperpay SDK_6.2.0/iOS_Frameworks_6.2.0/OPPWAMobile.xcframework"; sourceTree = "<group>"; };
-		A63DF2692B7A74FC0053ADE8 /* ipworks3ds_sdk_8546.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = ipworks3ds_sdk_8546.xcframework; sourceTree = "<group>"; };
 		AC29CB9F46018E3E6B1BAB75 /* Pods-Labany-LabanyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Labany-LabanyUITests.debug.xcconfig"; path = "Target Support Files/Pods-Labany-LabanyUITests/Pods-Labany-LabanyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B577F778220D47745AE1D708 /* Pods_LabanyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LabanyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3440E0A2B83623500CC9EB7 /* ipworks3ds_sdk_8546.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = ipworks3ds_sdk_8546.xcframework; sourceTree = "<group>"; };
+		C3440E0B2B83623600CC9EB7 /* OPPWAMobile.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = OPPWAMobile.xcframework; sourceTree = "<group>"; };
 		C39A4FEE28F2DAE300745DE5 /* Labany-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Labany-Bridging-Header.h"; sourceTree = "<group>"; };
 		E137FF613219BD34DC941FE7 /* Pods-LabanyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LabanyTests.release.xcconfig"; path = "Target Support Files/Pods-LabanyTests/Pods-LabanyTests.release.xcconfig"; sourceTree = "<group>"; };
 		E705FD6F283E8366001F53C1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
@@ -684,10 +684,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A63DF26E2B7A75180053ADE8 /* ipworks3ds_sdk_8546.xcframework in Frameworks */,
+				C3440E102B83624900CC9EB7 /* ipworks3ds_sdk_8546.xcframework in Frameworks */,
 				C33E7AD628FC7F4A00BE3928 /* GoogleSignInSwift in Frameworks */,
 				C35521AA298BE0B400A6F56C /* Moya in Frameworks */,
-				A63DF26C2B7A75160053ADE8 /* OPPWAMobile.xcframework in Frameworks */,
+				C3440E0E2B83624700CC9EB7 /* OPPWAMobile.xcframework in Frameworks */,
 				C33E7AD428FC7F4A00BE3928 /* GoogleSignIn in Frameworks */,
 				ED73FEFC4BB85B74D468F570 /* Pods_Labany.framework in Frameworks */,
 			);
@@ -728,8 +728,8 @@
 		3FB6926C734ECAAF0CE057A8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A63DF2692B7A74FC0053ADE8 /* ipworks3ds_sdk_8546.xcframework */,
-				A63DF2682B7A74FB0053ADE8 /* OPPWAMobile.xcframework */,
+				C3440E0A2B83623500CC9EB7 /* ipworks3ds_sdk_8546.xcframework */,
+				C3440E0B2B83623600CC9EB7 /* OPPWAMobile.xcframework */,
 				13CCEB63E4586DC49574DB66 /* Pods_Labany.framework */,
 				97CDDD8B0257D41E7786A738 /* Pods_Labany_LabanyUITests.framework */,
 				B577F778220D47745AE1D708 /* Pods_LabanyTests.framework */,
@@ -2670,7 +2670,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 7.2;
+				MARKETING_VERSION = 7.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.aait.nokhba;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2700,7 +2700,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 7.2;
+				MARKETING_VERSION = 7.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.aait.nokhba;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

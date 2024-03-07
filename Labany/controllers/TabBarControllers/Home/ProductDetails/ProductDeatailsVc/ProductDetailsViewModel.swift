@@ -77,11 +77,12 @@ class ProductDetailViewModel {
         presenter.addToCartApi(user_id: user_id, parameters: parameters){ [self] (data, error) in
        self.delegate?.killLoading()
        
-       if error == nil && data == nil {
-           print("Connection failed")
-           self.delegate?.connectionFailed()
-
-       } else if (error != nil)  {
+//       if error == nil && data == nil {
+//           print("Connection failed")
+//           self.delegate?.connectionFailed()
+//
+//       } else
+        if (error != nil)  {
            
         self.delegate?.showErrorAlert(error: error!)
            
