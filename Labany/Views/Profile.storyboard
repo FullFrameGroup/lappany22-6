@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -13,14 +13,14 @@
         <array key="ArbFONTS-Tajawal-Black.ttf">
             <string>Tajawal-Black</string>
         </array>
-        <array key="ArbFONTS-Tajawal-Bold.ttf">
-            <string>Tajawal-Bold</string>
-        </array>
         <array key="ArbFONTS-Tajawal-Medium.ttf">
             <string>Tajawal-Medium</string>
         </array>
         <array key="Tajawal Regular.ttf">
             <string>Tajawal-Regular</string>
+        </array>
+        <array key="Tajawal-Bold.ttf">
+            <string>Tajawal-Bold</string>
         </array>
     </customFonts>
     <scenes>
@@ -271,9 +271,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nIE-zx-dRX" customClass="UIVisualEffectViewX" customModule="Labany" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="49" width="414" height="447"/>
+                                <rect key="frame" x="0.0" y="53" width="414" height="443"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="8hC-8n-pmL">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="447"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="443"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ab9-vW-0XA">
@@ -320,7 +320,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAf-9c-v8o" customClass="TransitionButton" customModule="TransitionButton">
-                                            <rect key="frame" x="53" y="382" width="308" height="45"/>
+                                            <rect key="frame" x="53" y="378" width="308" height="45"/>
                                             <color key="backgroundColor" name="#dull_red"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="45" id="Vxp-UQ-FAO"/>
@@ -904,10 +904,10 @@
                                                         <rect key="frame" x="0.0" y="540" width="394" height="54"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Fdn-z2-ZKd">
-                                                                <rect key="frame" x="276.5" y="3" width="102.5" height="51"/>
+                                                                <rect key="frame" x="214.5" y="3" width="164.5" height="51"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="رقم المستلم" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e3Y-eI-xzp">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="102.5" height="51"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" رقم الجوال(مطلوب)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e3Y-eI-xzp">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="164.5" height="51"/>
                                                                         <fontDescription key="fontDescription" name="Tajawal-Medium" family="Tajawal Medium" pointSize="19"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -926,7 +926,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jbc-8w-XgM">
                                                         <rect key="frame" x="0.0" y="594" width="394" height="54"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="أدخل رقم هاتف المستلم" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CB5-98-rre">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="أدخل رقم الجوال" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CB5-98-rre">
                                                                 <rect key="frame" x="20" y="5" width="354" height="44"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="44" id="CJ4-gY-4pP"/>
@@ -1204,7 +1204,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eJy-FR-h8t" customClass="UIVisualEffectViewX" customModule="Labany" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="414" height="216"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="216"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="5Yj-xO-J9y">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="216"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1801,8 +1801,8 @@
         </designable>
     </designables>
     <resources>
-        <image name="chevron.down" catalog="system" width="128" height="72"/>
-        <image name="eye.slash.fill" catalog="system" width="128" height="82"/>
+        <image name="chevron.down" catalog="system" width="128" height="70"/>
+        <image name="eye.slash.fill" catalog="system" width="128" height="85"/>
         <image name="lock_overturning" width="195" height="195"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="photo.fill" catalog="system" width="128" height="93"/>
@@ -1834,7 +1834,7 @@
             <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -119,7 +119,7 @@ class AddAddressVC: UIViewController {
             showMessage(msg: "أدخل اسم المستلم", type: .error)
 
         }else if tfAlterContact.text == "" {
-            showMessage(msg: "أدخل رقم المستلم", type: .error)
+            showMessage(msg: "ادخل رقم الجوال", type: .error)
       
         }else{
             callAddAddressApi()

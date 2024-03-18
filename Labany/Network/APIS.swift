@@ -15,7 +15,7 @@ class APIs {
     public func commonHeaders () -> HTTPHeaders
     {
         let headers : HTTPHeaders = ["Accept":"application/json",
-                                     "x_api_key":"WYLUnBhBpGltg?##$%%^Y##$GZWcXfIW","Content-Type":"application/json","Content-Type": "application/x-www-form-urlencoded"]
+                                     "x_api_key":"WYLUnBhBpGltg?##$%%^Y##$GZWcXfIW","Content-Type": "application/x-www-form-urlencoded"]
         return headers
         
     }

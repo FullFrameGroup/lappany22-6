@@ -75,7 +75,7 @@ extension  LoginVC : ASAuthorizationControllerDelegate{
         
             if self.isConnectedToInternet()
             {
-    let parameters = ["userDetail":email,"device_token": mobileToken,"os_version":"iOS"] as [String : Any]
+    let parameters = ["userDetail":email,"device_token": mobileToken,"os_version":"iOS"] as [String: Any]
                 self.loginVM.socialLoginApi(parameters: parameters)
                 
                 

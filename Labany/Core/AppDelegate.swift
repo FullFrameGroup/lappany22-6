@@ -97,7 +97,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
         let token = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
         print("APNs token retrieved: \(token)")
         
-        Messaging.messaging().apnsToken = deviceToken
+       // Messaging.messaging().apnsToken = deviceToken
 
     }
     
@@ -288,15 +288,12 @@ func handleRemoteNotification(application:UIApplication,userInfo:NSDictionary){
 extension AppDelegate : MessagingDelegate {
 func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?)
     {
-        print("Firebase registration token: \(fcmToken ?? "")")
-      
+      print("Firebase registration token: \(fcmToken ?? "")")      
       let def = UserDefaults.standard
       def.setValue(fcmToken, forKey: "DeviceToken")
       def.synchronize()
     }
 }
-
-
 
 enum AppLanguages:String{
     case en = "en"
